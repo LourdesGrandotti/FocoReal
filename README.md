@@ -18,7 +18,7 @@
 
 ## 🖥️ Capturas
 
-> <img width="537" height="533" alt="image" src="https://github.com/user-attachments/assets/c3fe3d5b-9daf-48d9-a7d2-b592121052d9" />
+<img width="537" height="533" alt="image" src="https://github.com/user-attachments/assets/c3fe3d5b-9daf-48d9-a7d2-b592121052d9" />
 <img width="355" height="161" alt="image" src="https://github.com/user-attachments/assets/49e66ad7-fd4e-4f71-842e-bb2b6e3e1881" />
 
 ---
