@@ -33,16 +33,20 @@ inicio_sesion = None
 total_distracciones = 0
 segundos_transcurridos = 0
 timer_id = None
+tarea_actual = ""  # FIX: guardamos la tarea al iniciar para no perderla al detener
+
 
 # ------------------ FUNCIONES ------------------
 
 def iniciar_sesion():
-    global sesion_activa, pausada, inicio_sesion, total_distracciones, segundos_transcurridos
+    global sesion_activa, pausada, inicio_sesion, total_distracciones, segundos_transcurridos, tarea_actual
 
     tarea = tarea_entry.get().strip()
     if not tarea:
         messagebox.showwarning("Atención", "Ingresá una tarea antes de iniciar.")
         return
+
+    tarea_actual = tarea  # FIX: guardamos la tarea en la variable de estado
 
     sesion_activa = True
     pausada = False
@@ -114,6 +118,7 @@ def detener_sesion():
     btn_pausar.config(state=tk.DISABLED, text="Pausar")
     btn_detener.config(state=tk.DISABLED)
     tarea_entry.config(state=tk.NORMAL)
+    tarea_entry.delete(0, tk.END)  # limpiamos el campo para la próxima tarea
     timer_label.config(text="00:00:00")
     mensaje_var.set("")
 
@@ -188,7 +193,6 @@ def guardar_en_excel(duracion):
     if not EXCEL_DISPONIBLE:
         return
 
-    tarea = tarea_entry.get().strip()
     fecha = inicio_sesion.strftime("%Y-%m-%d")
     hora_inicio = inicio_sesion.strftime("%H:%M:%S")
 
@@ -201,7 +205,7 @@ def guardar_en_excel(duracion):
         ws.title = "Historial"
         ws.append(["Fecha", "Hora Inicio", "Tarea", "Duración", "Distracciones"])
 
-    ws.append([fecha, hora_inicio, tarea, duracion, total_distracciones])
+    ws.append([fecha, hora_inicio, tarea_actual, duracion, total_distracciones])  # FIX: usamos tarea_actual
     wb.save(ARCHIVO_HISTORIAL)
     agregar_historial(f"📊 Sesión guardada en {ARCHIVO_HISTORIAL}")
 
