@@ -213,6 +213,7 @@ def guardar_en_excel(duracion):
 # ------------------ INTERFAZ ------------------
 
 root = tk.Tk()
+root.config(bg="#B0C4DE")
 root.title("Control de Foco")
 root.geometry("450x520")
 root.resizable(False, False)

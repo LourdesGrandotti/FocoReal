@@ -48,4 +48,4 @@ Este proyecto es de uso libre para fines personales y educativos.
 ---
 
 ## Mejoras
-Que el exel se actualice, mascota virtual, musica, fraces motivacionales, poder confirmar con enter, ventana de chequeo en el centro de la pantalla, mejora front
+mascota virtual, musica, fraces motivacionales, poder confirmar con enter, ventana de chequeo en el centro de la pantalla, mejora front
