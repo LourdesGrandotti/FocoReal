@@ -215,20 +215,20 @@ def guardar_en_excel(duracion):
 root = tk.Tk()
 root.config(bg="#B0C4DE")
 root.title("Control de Foco")
-root.geometry("450x520")
+root.geometry("450x420")
 root.resizable(False, False)
 
 # Tarea
-tk.Label(root, text="Tarea actual:", font=("Arial", 11, "bold")).pack(pady=(15, 2))
+tk.Label(root, bg="#B0C4DE", text="Tarea actual:", font=("Arial", 11, "bold")).pack(pady=(15, 2))
 tarea_entry = tk.Entry(root, width=45, font=("Arial", 11))
 tarea_entry.pack(pady=2)
 
 # Timer
-timer_label = tk.Label(root, text="00:00:00", font=("Arial", 28, "bold"), fg="#333")
+timer_label = tk.Label(root, bg="#B0C4DE", text="00:00:00", font=("Arial", 28, "bold"), fg="#333")
 timer_label.pack(pady=10)
 
 # Botones de control
-frame_botones = tk.Frame(root)
+frame_botones = tk.Frame(root, bg="#B0C4DE")
 frame_botones.pack(pady=5)
 
 btn_iniciar = tk.Button(frame_botones, text="▶ Iniciar", width=12,
@@ -247,18 +247,18 @@ btn_detener = tk.Button(frame_botones, text="■ Detener", width=12,
 btn_detener.pack(side=tk.LEFT, padx=5)
 
 # Contador de distracciones
-contador_label = tk.Label(root, text="Distracciones: 0", font=("Arial", 11), fg="#555")
+contador_label = tk.Label(root, bg="#B0C4DE", text="Distracciones: 0", font=("Arial", 11), fg="#555")
 contador_label.pack(pady=5)
 
 # Historial
-tk.Label(root, text="Historial:", font=("Arial", 10, "bold")).pack()
+tk.Label(root, bg="#B0C4DE", text="Historial:", font=("Arial", 10, "bold")).pack()
 historial = tk.Text(root, height=8, width=52, state=tk.DISABLED,
                     font=("Courier", 9), bg="#f9f9f9")
 historial.pack(pady=5)
 
 # Mensaje motivacional
 mensaje_var = tk.StringVar()
-mensaje_label = tk.Label(root, textvariable=mensaje_var,
+mensaje_label = tk.Label(root, bg="#B0C4DE", textvariable=mensaje_var,
                          font=("Arial", 11, "bold"), fg="#1565C0",
                          wraplength=400)
 mensaje_label.pack(pady=10)
